@@ -15,3 +15,7 @@ then changes on the data triggers the method, even if the method has nothing to 
 vm.items++;
 app.js:12 method - priceIncludingVatM called
 ```
+
+## When to use _methods_?
+
+Use methods to execute business logic.
