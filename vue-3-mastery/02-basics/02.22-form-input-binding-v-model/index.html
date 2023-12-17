@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue 3 Reactivity</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js" defer></script>
+    <style type="text/css">
+      body,
+      input,
+      button {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol';
+        /* font-size: 20pt; */
+      }
+
+      div {
+        padding: 0.3rem;
+      }
+      label {
+        padding-right: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div>
+        <label for="riddle1">Interpolation is also called</label>
+        <input
+          value="is ignored, will override it"
+          id="riddle1"
+          type="text"
+          v-model.trim="riddle1"
+        />
+        syntax
+      </div>
+      <div v-if="level1">
+        <label for="riddle2">What's the current Vue version?</label>
+        <input id="riddle2" type="number" v-model.trim.number="riddle2" />
+        syntax
+      </div>
+      <div v-if="level2">
+        <div>
+          <input
+            id="riddle3a"
+            type="checkbox"
+            v-model="riddle3"
+            value="Reactive"
+          />
+          <label for="riddle3a">Reactive</label>
+        </div>
+        <div>
+          <input
+            id="riddle3b"
+            type="checkbox"
+            v-model="riddle3"
+            value="Computed"
+          />
+          <label for="riddle3b">Computed</label>
+        </div>
+        <div>
+          <input
+            id="riddle3c"
+            type="checkbox"
+            v-model="riddle3"
+            value="Method"
+          />
+          <label for="riddle3c">Method</label>
+        </div>
+        <div>
+          <input
+            id="riddle3d"
+            type="checkbox"
+            v-model="riddle3"
+            value="Variable"
+          />
+          <label for="riddle3d">Variable</label>
+        </div>
+      </div>
+      <div v-if="level3">
+        <input id="ready" type="checkbox" v-model="ready" />
+        <label for="riddle3d">Ready?</label>
+      </div>
+      <div v-if="level3 && ready">Wordstar!!!</div>
+    </div>
+  </body>
+</html>
