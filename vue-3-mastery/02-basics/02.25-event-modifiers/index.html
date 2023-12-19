@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <title>Vue 3 Event Handling</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js" defer></script>
+  <style type="text/css">
+    body,
+    input,
+    button {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 20pt;
+    }
+
+    div {
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .border-red {
+      border: 1px dashed red;
+    }
+
+    .border-green {
+      border: 1px dashed green;
+    }
+
+    .border-blue {
+      border: 1px dashed blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="border-red" v-if="visible"
+      @click="hide(), log('Hiding element!')">
+      Click to hide!
+      <button @click="log('Playing!')">Click to
+        play!</button>
+    </div>
+
+    <div @click="log('1 level')" class="border-red">
+      @click (no modifiers)
+      <div @click="log('2 level')" class="border-green">
+        @click
+        <div @click="log('3 level')" class="border-blue">
+          @click
+        </div>
+      </div>
+    </div>
+
+    <div @click="log('1 level')" class="border-red">
+      @click (2nd element has .self)
+      <div @click.self="log('2 level')"
+        class="border-green">
+        @click.self
+        <div @click="log('3 level')" class="border-blue">
+          @click
+        </div>
+      </div>
+    </div>
+
+    <div @click="log('1 level')" class="border-red">
+      @click (2nd element has .stop)
+      <div @click.stop="log('2 level')"
+        class="border-green">
+        @click.stop
+        <div @click="log('3 level')" class="border-blue">
+          @click
+        </div>
+      </div>
+    </div>
+
+    <div @click.capture="log('Text clicked')"
+      class="border-red">
+      .capture (the parent element handler is called FIRST)
+      <button @click="log('Button clicked')">Button</button>
+    </div>
+
+    <div @click="log('Text clicked')" class="border-red">
+      without .capture
+      <button @click="log('Button clicked')">Button</button>
+    </div>
+
+    <div class="border-red">
+      .once (event triggered only once)
+      <button @click.once="log('Button clicked')">Just
+        once!</button>
+    </div>
+  </div>
+</body>
+
+</html>
