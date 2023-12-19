@@ -1,8 +1,10 @@
 # Notes
 
-## Difference between _methods_ and _computed properties_?
+## 02.17-computed-properties-vs-methods
 
-The methods are not cached. If we compare both:
+What are the difference between _methods_ and _computed properties_?
+
+The `methods` are **not cached**. If we compare both:
 
 ```html
       <div>With VAT {{priceIncludingVat}}$</div>

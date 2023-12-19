@@ -1,12 +1,14 @@
 # Notes
 
-We do not want to have too many JS expressions inside the view, like this:
+## 02.16-computed-properties
+
+The _computed properties_ are added to the `computed` _object_ on the Vue app.
+
+We do not want to have too many JS expressions inside the view, like this, thereof we have the computed properties.
 
 ```html
   <div>With VAT {{price * 1.23}}$</div>
 ```
-
-We can use _computed properties_ which are added to a `computed` Vue app object property.
 
 The computed properties also can make outside variables available to Vue components (see `taxRate`).
 

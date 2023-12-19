@@ -1,3 +1,7 @@
 # Notes
 
-Because the _data properties_ is a function, Vue creates an new instance of the object for each instance of the `Vue` component.
+## 02.13-data-properties
+
+The _reactive data properties_ are added to the `data()` _function_ on the Vue app.
+
+Because the `data()` is a _function_, Vue creates a _new instance_ of it _to each Vue application_.

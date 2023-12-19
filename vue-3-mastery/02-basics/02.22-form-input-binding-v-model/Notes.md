@@ -1,5 +1,7 @@
 # Notes
 
+## 02.22-form-input-binding-v-model
+
 The `v-model` applies to input text and text area elements and provides a 2-way data binding.
 Changes of the reactive properties change change the element's value.
 Changes on the element's value change the data reactive property.

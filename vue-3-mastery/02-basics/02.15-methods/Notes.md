@@ -1,6 +1,8 @@
 # Notes
 
-The _methods_ are added to a `methods` Vue app object property.
+## 02.15-methods
+
+The _methods_ are added to the `methods` _object_ on the Vue app.
 
 All the properties and the methods are available under `this`.
 
