@@ -1,6 +1,6 @@
 # Notes
 
-## 02.34-css-class-binding
+## 02.34-css-class-binding-object-syntax
 
 CSS classes can be applied using the so called _object syntax_ we use to _bind a class to element_ using `:class` directive.
 
