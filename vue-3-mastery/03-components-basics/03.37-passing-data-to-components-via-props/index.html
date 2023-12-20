@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      03.37 - Vue 3 Components - Passing Data to Components via Props
+    </title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.css"
+    />
+    <script src="app.js" defer></script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <div id="app" class="p-8 w-3/4 mx-auto">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <todo-list-item task="Buy food"></todo-list-item>
+        <todo-list-item task="Buy some clothes"></todo-list-item>
+        <todo-list-item task="Buy some courses"></todo-list-item>
+      </div>
+    </div>
+  </body>
+</html>
