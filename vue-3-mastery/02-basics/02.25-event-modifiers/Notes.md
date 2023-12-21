@@ -8,3 +8,12 @@
 - `.once` event handler modifier - _only fired once_. Subsequent presses do not trigger the event anymore
 
 The modifiers can be combined `@click.self.stop="method"`.
+
+### Key modifiers
+
+Convenient key modifier is `@keyup.enter`:
+
+```html
+<!-- only call `submit` when the `key` is `Enter` -->
+<input @keyup.enter="submit" />
+```

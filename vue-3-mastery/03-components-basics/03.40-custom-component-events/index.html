@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>03.39 - Vue 3 Components - Component Prop Attributes</title>
+    <title>03.40 - Vue 3 Components - Custom Component Events</title>
     <script src="https://unpkg.com/vue@next"></script>
     <link
       rel="stylesheet"
@@ -16,9 +16,10 @@
   <body class="bg-gray-50 text-gray-800">
     <div id="app" class="p-8 w-3/4 mx-auto">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <todo-list-item task="Okay" :id="5"></todo-list-item>
-        <todo-list-item task="Buy some clothes" id="Hello"></todo-list-item>
-        <todo-list-item task="Buy some courses" :id="105"></todo-list-item>
+        <add-task-input></add-task-input>
+        <todo-list-item task="Okay"></todo-list-item>
+        <todo-list-item task="Buy some clothes"></todo-list-item>
+        <todo-list-item task="Buy some courses"></todo-list-item>
       </div>
     </div>
   </body>
