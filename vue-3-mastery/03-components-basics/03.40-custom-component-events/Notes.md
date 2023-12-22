@@ -2,6 +2,8 @@
 
 ## 03.40-custom-component-events
 
+![task custom component events](./tasks-custom-component-events.png)
+
 _Emit event_ with `$this.$emit()` passing the _event name_ as argument one and _the data_ to the event as argument two:
 
 ```js

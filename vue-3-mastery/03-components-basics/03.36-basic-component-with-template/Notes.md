@@ -14,7 +14,9 @@ We _define component_ with the syntax:
 app.component('', {});
 ```
 
-The _first argument_ is the component name. Prefer [multi-word names to prevent conflicts](https://vuejs.org/style-guide/rules-essential.html#use-multi-word-component-names). Note: use the su named kabob case ('hello-world-item'), all lower case and the words separated by hyphen.
+The _first argument_ is the component name. Prefer [multi-word names to prevent conflicts](https://vuejs.org/style-guide/rules-essential.html#use-multi-word-component-names). Note: use the so named kabob case ('hello-world-item'), all lower case and the words separated by hyphen.
+
+Also, prefix the names with `Base`, `App` or `V` as recommended in the [Vue Style Guide](https://vuejs.org/style-guide/).
 
 The _second argument_ is the object that defines the component. Has the same structure as the Vue app. The difference here is that we have `template` property.
 
