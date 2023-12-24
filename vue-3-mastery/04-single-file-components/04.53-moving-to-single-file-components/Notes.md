@@ -20,6 +20,6 @@ becomes:
 
 Note that we also close the tag unless we are using slots.
 
-While adjusting the `index.html` file, note the [lodash template syntax](https://lodash.com/docs/4.17.15#template) that is used by _webpack_. This file is a template that is processed by webpack:
+While adjusting the _index.html_ file, note the [lodash template syntax](https://lodash.com/docs/4.17.15#template) that is used by _webpack_. This file is a template that is processed by webpack:
 
 ![lodash-template-syntax](./lodash-template-syntax.png)
