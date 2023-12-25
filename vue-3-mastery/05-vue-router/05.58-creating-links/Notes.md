@@ -2,7 +2,7 @@
 
 ## 05.58-creating-links
 
-Use elemenrt
+Use `RouterLink` element.
 
 Example:
 
