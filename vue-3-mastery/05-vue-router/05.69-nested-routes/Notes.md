@@ -39,7 +39,7 @@ We create 2 pages for the nested routes:
 
 - src\pages\ArticlePage\ArticleCommentList.vue
 
-Note: We define `loadComments` and we also add a watcher. That way even if we manually change the article ID in the browser url, it will refresh the proper comments.
+Note: We define `loadComments` and we also add a watcher. That way even if we change the article ID in the browser url (manually or tapping on a link), it will refresh the proper comments even .
 
 ```js
 <template>
