@@ -52,3 +52,23 @@ On the webpage press _Shift+Alt+D_ to toggle _Nuxt DevTools_ and verify the modu
 ### Style with Tailwind CSS
 
 See [Tailwind CSS](https://tailwindcss.com/docs/installation) page.
+
+### Components
+
+Add to directory _components_. They are imported automatically.
+
+`@apply` allows to apply Tailwind CSS classes to a class:
+
+```html
+        <NuxtLink to="/about" class="link">About</NuxtLink>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<style scoped>
+.link {
+  @apply p-1 hover:bg-gray-200
+}
+</style>
+```
