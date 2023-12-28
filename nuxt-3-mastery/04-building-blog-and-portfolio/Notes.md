@@ -86,3 +86,9 @@ Note that with `useHead()` we can specify `title` for the pages and `titleTempla
 ### External CSS
 
 See [External CSS documentation](https://nuxt.com/docs/getting-started/seo-meta#external-css) page.
+
+You can add Google fonts to your site.
+
+### Data fetching
+
+See [Data fetching](https://nuxt.com/docs/getting-started/data-fetching) page.
