@@ -48,3 +48,7 @@ For _tailwindcss_
 - verify module is active
 
 On the webpage press _Shift+Alt+D_ to toggle _Nuxt DevTools_ and verify the module is active from the modules section.
+
+### Style with Tailwind CSS
+
+See [Tailwind CSS](https://tailwindcss.com/docs/installation) page.
