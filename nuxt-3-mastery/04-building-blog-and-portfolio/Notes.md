@@ -72,3 +72,17 @@ Add to directory _components_. They are imported automatically.
 }
 </style>
 ```
+
+### SEO and Meta tags
+
+See [SEO and meta](https://nuxt.com/docs/getting-started/seo-meta) page.
+
+On the page open the _Nuxt DevTools_ and select _Open Graph_ to see the list of _Missing Tags_. It also provides a _Code Snipped_ how to add those.
+
+For the Open Graph (OG) Protocol tags see [ogp.me/#metadata](https://ogp.me/#metadata) page.
+
+Note that with `useHead()` we can specify `title` for the pages and `titleTemplate` in the template page.
+
+### External CSS
+
+See [External CSS documentation](https://nuxt.com/docs/getting-started/seo-meta#external-css) page.

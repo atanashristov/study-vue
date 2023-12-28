@@ -1,12 +1,3 @@
-<script setup>
-// function enableCustomLayout () {
-//   setPageLayout('another')
-// }
-// definePageMeta({
-//   layout: 'another'
-// })
-</script>
-
 <template>
   <div>
     This page is about me.
@@ -15,3 +6,16 @@
     <button @click="enableCustomLayout">Update layout</button>
   </div> -->
 </template>
+
+<script setup>
+// function enableCustomLayout () {
+//   setPageLayout('another')
+// }
+// definePageMeta({
+//   layout: 'another'
+// })
+useHead({
+  title: 'About'
+});
+</script>
+
