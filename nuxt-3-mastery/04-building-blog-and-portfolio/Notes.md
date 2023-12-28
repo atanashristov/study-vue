@@ -22,3 +22,29 @@ To learn more about directory structure, see [Custom Directories](https://nuxt.c
 Can set global or custom layout.
 
 Custom layout can be set globally, per page or changed dynamically/programmatically.
+
+See: [Layouts](https://nuxt.com/docs/guide/directory-structure/layouts) page.
+
+### Modules
+
+To install modules to the Nuxt project, check the [Nuxt Modules](https://nuxt.com/modules) directory.
+
+For _tailwindcss_
+
+- add `@nuxtjs/tailwindcss` dependency to the project: `npm install --save-dev @nuxtjs/tailwindcss`
+
+- add `@nuxtjs/tailwindcss` to modules section of the _nuxt.config.{ts,js}_:
+
+```js
+{
+  modules: [
+    '@nuxtjs/tailwindcss'
+  ]
+}
+```
+
+- start the app `npm run dev`
+
+- verify module is active
+
+On the webpage press _Shift+Alt+D_ to toggle _Nuxt DevTools_ and verify the module is active from the modules section.
