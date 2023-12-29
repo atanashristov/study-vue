@@ -189,3 +189,28 @@ See:
 
 - [Markdown Front Matter](https://content.nuxt.com/usage/markdown#front-matter)
 - [Markdown Front Matter Head Section](https://content.nuxt.com/composables/use-content-head)
+
+### Custom Pages in Markdown
+
+We can have any simple page as Markdown, for example the _about_ page. We can specify a `path`:
+
+```html
+<template>
+  <main>
+    <ContentDoc path="/about" />
+  </main>
+</template>
+```
+
+Without re-implementing _Prose Components_, we can also easy customize styling using _TailwindCSS Typography Element Modifiers_:
+
+```html
+  <article class="prose dark:prose-invert prose-h1:text-2xl prose-a:text-blue-600 hover:prose-a:text-blue-500">
+    <ContentDoc path="/about" />
+  </article>
+
+```
+
+See:
+
+- [TailwindCSS Typography Element Modifiers](https://tailwindcss.com/docs/typography-plugin#element-modifiers)
