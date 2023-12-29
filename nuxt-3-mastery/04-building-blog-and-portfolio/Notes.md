@@ -180,3 +180,12 @@ See:
 - [VS Code MDC Markdown Components Extension](https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc)
 - [Markdown Live Preview](https://markdownlivepreview.com/)
 - [Tailwind Play](https://play.tailwindcss.com/uj1vGACRJA?layout=preview)
+
+### Markdown Meta Tags
+
+_Front Matter_ provides meta data to the content pages. It uses _YAML_ syntax.
+
+See:
+
+- [Markdown Front Matter](https://content.nuxt.com/usage/markdown#front-matter)
+- [Markdown Front Matter Head Section](https://content.nuxt.com/composables/use-content-head)

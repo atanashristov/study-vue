@@ -1,3 +1,20 @@
+---
+title: 'First post in 2024'
+description: 'My first post in 2024 and my first post with Nuxt!'
+head:
+  meta:
+    - name: 'keywords'
+      content: 'nuxt, vue, content'
+    - name: 'robots'
+      content: 'index, follow'
+    - name: 'author'
+      content: 'Atanas Hristov'
+    - name: 'copyright'
+      content: '© 2024 Atanas Hristov'
+    - name: 'og:title'
+      content: 'First post in 2024'
+---
+
 # First post in 2024
 
 ## Introduction
