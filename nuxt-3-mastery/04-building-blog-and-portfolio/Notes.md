@@ -137,7 +137,28 @@ See:
 
 Nuxt Content reads _content/_ directory and parses _.md_, _.yml_, _.csv_, _.json_.
 
+If the catch all page is `_pages/blog/[...slug].vue_, then we add the blog content posts into _content/blog/_ folder, we follow the same directory structure.
+
+You can also add files to sub-folders, thereof _content/blog/dir1/file1.md_ can be open with url path _blog/dir1/file1_
+
+For Markdown it uses _MDC syntax_.
+
+The Markdown content is rendered using _Prose Components_ like `ProseH1`, `ProseP`, etc.
+
+These components can be customized. To overwrite a prose component, create a component with the same name in your project _components/content/_ directory (ex: _components/content/ProseA.vue_).
+
+The content can be queried by _Query builder_
+
+To be able to show content we have to install the _Nuxt Content Module_ with `npm install @nuxt/content`
+
+Then we have to enable the module into _nuxt.config.ts_.
+
 See:
 
 - [Nuxt Content](https://content.nuxt.com/)
+- [Nuxt Content Directory](https://content.nuxt.com/usage/content-directory)
 - [Nuxt Content with Markdown](https://content.nuxt.com/usage/markdown)
+- [Nuxt Content Prose Components](https://content.nuxt.com/components/prose)
+- [Nuxt Content Query Builder](https://content.nuxt.com/composables/query-content#query-builder)
+- [VS Code MDC Markdown Components Extension](https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc)
+- [Markdown Live Preview](https://markdownlivepreview.com/)
