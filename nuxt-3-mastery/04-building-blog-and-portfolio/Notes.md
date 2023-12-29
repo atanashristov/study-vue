@@ -214,3 +214,35 @@ Without re-implementing _Prose Components_, we can also easy customize styling u
 See:
 
 - [TailwindCSS Typography Element Modifiers](https://tailwindcss.com/docs/typography-plugin#element-modifiers)
+
+### Content images and Code Highlighting
+
+Images go to _images/_ folder.
+
+Code syntax highlighting themes are included, we just need to change in _nuxt.config.ts_:
+
+```js
+  content: {
+    highlight: {
+      theme: {
+        default: 'min-light',
+        dark: 'min-dark'
+      }
+    }
+  },
+```
+
+See:
+
+- [NuxtContent Code Highlighting](https://content.nuxt.com/usage/markdown#code-highlighting)
+- [NuxtContent Code Highlighting Configuration](https://content.nuxt.com/get-started/configuration#highlight)
+- [Shikiji](https://github.com/antfu/shikiji)
+- [Shikiji - List of themes](https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes)
+- [Preview of the themes on vscodethemes.com](https://vscodethemes.com/)
+
+Note: Code syntax highlighter did not work for me until I changed the devDependencies downgrading `@nuxt/content`:
+
+```json
+  "devDependencies": {
+    "@nuxt/content": "2.7.2",
+```
