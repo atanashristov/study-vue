@@ -92,3 +92,52 @@ You can add Google fonts to your site.
 ### Data fetching
 
 See [Data fetching](https://nuxt.com/docs/getting-started/data-fetching) page.
+
+### Dark mode
+
+With `ref()` we create reactive mutable object:
+
+```js
+ const showNextModelLabel = ref(false)`
+```
+
+and then reference and change it from the template:
+
+```html
+<div class="text-gray-500 text-xs" v-if="showNextModelLabel">Change to {{ nextMode }}</div>
+<button @click="toggleMode" @mouseenter="showNextModelLabel = true" @mouseleave="showNextModelLabel = false" ...
+```
+
+With `computed()` we create reactive readonly object:
+
+```js
+const nextModeIcon = computed(() => nextModeIcons[nextMode.value])
+```
+
+and then reference and change it from the template:
+
+```html
+... {{ nextModeIcon }} ...
+```
+
+To render content only on the client, we wrap it in `<ClientOnly/>` tag:
+
+```html
+<ClientOnly>
+  <ColorModeSelector />
+</ClientOnly>
+```
+
+See:
+
+- [Tailwind CSS Dark Mode](https://tailwindcss.com/docs/dark-mode)
+- [Nuxt Color Mode](https://color-mode.nuxtjs.org/)
+
+### Content Management
+
+Nuxt Content reads _content/_ directory and parses _.md_, _.yml_, _.csv_, _.json_.
+
+See:
+
+- [Nuxt Content](https://content.nuxt.com/)
+- [Nuxt Content with Markdown](https://content.nuxt.com/usage/markdown)
