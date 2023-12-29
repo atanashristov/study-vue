@@ -151,7 +151,23 @@ The content can be queried by _Query builder_
 
 To be able to show content we have to install the _Nuxt Content Module_ with `npm install @nuxt/content`
 
-Then we have to enable the module into _nuxt.config.ts_.
+Then we have to enable the module into _nuxt.config.ts_:
+
+```js
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
+```
+
+Also, _tailwindcss_ overrides the styling, so all looks the same. We need to install the _@tailwindcss/typography plugin_: `npm install -D @tailwindcss/typography` and then enable the module into _nuxt.config.ts_.
+
+The plugin only applies when we explicitly add a `prose` class:
+
+```html
+  <article class="prose dark:prose-invert">
+    <ContentDoc />
+  </article>
+```
 
 See:
 
@@ -160,5 +176,7 @@ See:
 - [Nuxt Content with Markdown](https://content.nuxt.com/usage/markdown)
 - [Nuxt Content Prose Components](https://content.nuxt.com/components/prose)
 - [Nuxt Content Query Builder](https://content.nuxt.com/composables/query-content#query-builder)
+- [@tailwindcss/typography plugin](https://tailwindcss.com/docs/typography-plugin)
 - [VS Code MDC Markdown Components Extension](https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc)
 - [Markdown Live Preview](https://markdownlivepreview.com/)
+- [Tailwind Play](https://play.tailwindcss.com/uj1vGACRJA?layout=preview)
