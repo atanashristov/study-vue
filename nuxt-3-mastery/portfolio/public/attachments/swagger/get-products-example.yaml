@@ -1,0 +1,104 @@
+swagger: '2.0' # Every Open API file needs this
+
+info:
+  version: "0.0.1"
+  title: Product Catalog service
+  description: |
+    The Product Catalog service provides products information, and allows purchasing of products.
+host: api.ProductCatalog.com
+basePath: /v1
+tags:
+  - name: products
+    description: Lists of products, information about single product, etc.
+  - name: purchase
+    description: Purchasing products
+schemes:
+  - https
+
+# Endpoints
+paths:
+  /products/{ratecardId}:
+    get:
+      tags:
+        - products
+      summary: |
+        Get list of all products by ratecard ID.
+      produces:
+        - application/json
+      parameters:
+        # Sent as path parameter
+        - name: ratecardId
+          description: Ratecard ID
+          in: path
+          required: true
+          type: integer
+
+        # Sent as query parameter
+        - name: userId
+          description: User ID
+          in: query
+          required: true
+          type: integer
+
+        # Sent as header parameter
+        - name: api-sessionid
+          description: Session ID
+          in: header
+          required: false
+          type: string
+
+      # Response fields
+      responses:
+        '200':
+          description: successful operation
+          schema:
+              $ref: '#/definitions/GetProductsResponse'
+        '400':
+          description: Invalid ratecardId or invalid userId
+
+definitions:
+    ProductPrice:
+      description: Pricing information
+      type: object
+      properties:
+        salesPrice:
+          description: Sales price prior tax application
+          type: number
+          format: double
+        taxAmount:
+          description: Tax amount
+          type: number
+          format: double
+        totalCost:
+          description: Total cost after tax applied
+          type: number
+          format: double
+
+    Product:
+      type: object
+      properties:
+        productId:
+          description: Product ID
+          type: integer
+        productTitle:
+          description: Product title
+          type: string
+        isoCurrencyCode:
+          description: Three letter ISO currency code
+          type: string
+        productPrice:
+          $ref: '#/definitions/ProductPrice'
+
+    GetProductsResponse:
+      type: object
+      properties:
+        taxRate:
+          description: Tax rate
+          type: number
+          format: double
+          minimum: 0.0000
+        products:
+          type: array
+          items:
+            $ref: '#/definitions/Product'
+  

@@ -1,5 +1,4 @@
 ---
-title: 'First post in 2024'
 description: 'My first post in 2024 and my first post with Nuxt!'
 head:
   meta:
@@ -13,6 +12,7 @@ head:
       content: '© 2024 Atanas Hristov'
     - name: 'og:title'
       content: 'First post in 2024'
+publishedAt: 2024-01-01T00:00:00-06:00
 ---
 
 # First post in 2024
@@ -43,9 +43,9 @@ Todo list:
 - [ ] Pay bills
 
 Tables:
-| Name  | Surname |
-| ----- | ------- |
-| Piotr | Jura    |
+| Name   | Surname |
+| ------ | ------- |
+| Atanas | Hristov |
 
 ```html
 <html>

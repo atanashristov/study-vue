@@ -264,3 +264,36 @@ const { data: posts } = await useAsyncData(
 See:
 
 - [Nuxt Content Query Builder](https://content.nuxt.com/composables/query-content#query-builder)
+
+### MDC Syntax
+
+MDC stands for MarkDown Components. It extends Markdown to write documents that interact with Vue components.
+
+We convert the list of blog posts to Vue Content components.
+
+We create _components/content/_ folder and _blog-posts.vue_ component.
+
+We add _content/blog/index.md_ and delete the _pages/blog/index.vue_ file.
+
+We filter out _index.md_ file with `.where({ _path: { $ne: '/blog' } })`.
+
+Sometimes we would like to suppress _prose_ css styles, then we mark with `class="not-prose"`.
+
+Note: the _title_ meta tag automatically gets created from the H1 text from the Markdown text.
+
+```markdown
+---
+description: 'List of blog posts'
+---
+# Blog Posts
+
+::blog-posts
+```
+
+To the blog posts we can add any custom field into the meta information, thereof we add `publishedAt`.
+
+See:
+
+- [NuxtContent Write Vue Content Components](https://content.nuxt.com/usage/markdown#vue-components)
+- [Nuxt3 Components directory](https://nuxt.com/docs/guide/directory-structure/components)
+- [MDC Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc)
