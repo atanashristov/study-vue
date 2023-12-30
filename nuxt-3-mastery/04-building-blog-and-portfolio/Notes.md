@@ -246,3 +246,21 @@ Note: Code syntax highlighter did not work for me until I changed the devDepende
   "devDependencies": {
     "@nuxt/content": "2.7.2",
 ```
+
+### Content Querying
+
+To prevent duplication of fetching data on server and client side, we use `useAsyncData`.
+We use destructuring assignment to only get he `data` property and assign it to an alias `posts`.
+
+```html
+<script setup>
+const { data: posts } = await useAsyncData(
+  'blog-list',
+  () => queryContent('/blog').only(['_path', 'title']).find()
+)
+</script>
+```
+
+See:
+
+- [Nuxt Content Query Builder](https://content.nuxt.com/composables/query-content#query-builder)
