@@ -1,8 +1,5 @@
 <template>
-  <div class="mb-10">
-    Take a look at my GitHub projects
-  </div>
-
+  <div class="not-prose">
     <section v-if="pending">Loading...</section>
     <section v-else-if="error">Something went wrong... Try again!</section>
     <section v-else>
@@ -20,6 +17,7 @@
         </li>
       </ul>
     </section>
+  </div>
 </template>
 
 <script setup>
