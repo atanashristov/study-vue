@@ -6,6 +6,7 @@ head:
     - name: 'keywords'
       content: 'YAML, Swagger'
 publishedAt: 2018-09-15T00:00:00-06:00
+toc: true
 ---
 # Yaml - Basic Syntax
 
@@ -18,27 +19,6 @@ YAML is used by many systems and programing languages. It is easy to write and u
 YAML stands for **Y**AML **A**in't **M**arkup **L**anguage, even though originally was created to be used for markup.
 
 YAML is _used for data_ and not for content. It is thereof similar to XML and JSON. Often it is used for _configuration files_, rather than API format.
-
-<hr/>
-
-Table of content:
-
-<!-- vscode-markdown-toc -->
-- [Yaml - Basic Syntax](#yaml---basic-syntax)
-  - [YAML syntax](#yaml-syntax)
-    - [Types and key/value pairs](#types-and-keyvalue-pairs)
-    - [Lists and dictionaries](#lists-and-dictionaries)
-    - [Comments](#comments)
-    - [Multi-line strings and special characters](#multi-line-strings-and-special-characters)
-  - [Links](#links)
-
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-<hr/>
 
 ## YAML syntax
 

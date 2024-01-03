@@ -6,7 +6,7 @@ head:
     - name: 'keywords'
       content: 'Kubernetes, Kubeadm'
 publishedAt: 2019-04-05T00:00:00-06:00
-
+toc: true
 ---
 
 # Kubernetes - Setup a Cluster using Kubeadm
@@ -16,24 +16,6 @@ publishedAt: 2019-04-05T00:00:00-06:00
 This blog post contains an example how to set up Kubernetes cluster with Virtual Box virtual machines.
 
 I am using `kubeadm` to setup I cluster with one master and two worker nodes.
-
-<hr/>
-
-Table of content:
-
-<!-- vscode-markdown-toc -->
-- [Kubernetes - Setup a Cluster using Kubeadm](#kubernetes---setup-a-cluster-using-kubeadm)
-  - [Setup Virtual Box Virtual Machines](#setup-virtual-box-virtual-machines)
-    - [Host Only Network](#host-only-network)
-  - [Setup Kubernetes Cluster](#setup-kubernetes-cluster)
-
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-<hr/>
 
 ## Setup Virtual Box Virtual Machines
 

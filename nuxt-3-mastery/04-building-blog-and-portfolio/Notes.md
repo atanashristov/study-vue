@@ -297,3 +297,69 @@ See:
 - [NuxtContent Write Vue Content Components](https://content.nuxt.com/usage/markdown#vue-components)
 - [Nuxt3 Components directory](https://nuxt.com/docs/guide/directory-structure/components)
 - [MDC Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc)
+
+### Table of content
+
+We take all the _h2_ and _h3_ elements from the page and create table of content.
+
+The `<ContentDoc/>` component is smart enough to fetch the markdown file based on the current path plus the corresponding location of the markdown file inside the folder.
+
+```html
+<ContentDoc/>
+```
+
+If we look at the documentation, the `<ContentDoc/>` component combines `<ContentRenderer/>` and `<ContentQuery/>`. It has access to parsed markdown as well as file information. It also contains table of contents based on _h2_ and _h3_ tags and it is located inside _doc..
+
+To customize how the component renders we can use _Slots_. First we get access to the props of the child element, here is how we can just print all the json on the screen:
+
+```html
+    <ContentDoc v-slot="childProps">
+      {{ childProps }}
+    </ContentDoc>
+```
+
+Or if we destructure just the `doc` element and render the Markdown:
+
+```html
+    <ContentDoc v-slot="{ doc }">
+      <ContentRenderer :value="doc"/>
+    </ContentDoc>
+```
+
+And at the same time we now got access to the document data:
+
+```html
+    <ContentDoc v-slot="{ doc }">
+      {{ doc.body.toc.links }}
+      <ContentRenderer :value="doc"/>
+    </ContentDoc>
+```
+
+and this is how the json looks like printed from `{{ doc.body.toc.links }}`
+
+```json
+[
+  {
+    "id": "setup-virtual-box-virtual-machines",
+    "depth": 2,
+    "text": "Setup Virtual Box Virtual Machines",
+    "children": [
+      {
+        "id": "host-only-network",
+        "depth": 3,
+        "text": "Host Only Network"
+      }
+    ]
+  },
+  {
+    "id": "setup-kubernetes-cluster",
+    "depth": 2,
+    "text": "Setup Kubernetes Cluster"
+  }
+]
+```
+
+See:
+
+- [NuxtContent - ContentDoc](https://content.nuxt.com/components/content-doc)
+- [NuxtContent - ContentDoc Slots](https://content.nuxt.com/components/content-query#slots)

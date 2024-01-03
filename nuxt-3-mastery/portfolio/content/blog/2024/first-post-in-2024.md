@@ -13,6 +13,7 @@ head:
     - name: 'og:title'
       content: 'First post in 2024'
 publishedAt: 2024-01-01T00:00:00-06:00
+toc: false
 ---
 
 # First post in 2024

@@ -6,6 +6,7 @@ head:
     - name: 'keywords'
       content: 'JavaScript, Webpack, Parcel'
 publishedAt: 2018-10-14T00:00:00-06:00
+toc: true
 ---
 # Parcel - A zero configuration web application bundler
 
@@ -20,28 +21,6 @@ These tools normally use **Webpack** as a module builder. It brings together all
 While the idea is charming, the Webpack **configuration** is pretty complicated. I was wondering if there is something easy to kick off a project and do these things without using starter kit and _without all the complicated configuration_ around Webpack.
 
 Sure, there is a tool, and this is [Parcel](https://parceljs.org/){:target="_blank"}.
-
-<hr/>
-
-Table of content:
-
-<!-- vscode-markdown-toc -->
-- [Parcel - A zero configuration web application bundler](#parcel---a-zero-configuration-web-application-bundler)
-  - [Start a project](#start-a-project)
-  - [Npm script](#npm-script)
-  - [Hot reload](#hot-reload)
-  - [Customizing Babel](#customizing-babel)
-  - [Using Sass](#using-sass)
-  - [Production build](#production-build)
-  - [Links](#links)
-
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-<hr/>
 
 **Parcel** can be used to build both client side apps ad well as Node.js server side apps.
 

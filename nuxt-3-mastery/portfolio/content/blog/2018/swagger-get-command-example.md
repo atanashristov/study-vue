@@ -6,6 +6,7 @@ head:
     - name: 'keywords'
       content: 'Swagger'
 publishedAt: 2018-09-22T00:00:00-06:00
+toc: true
 ---
 # Swagger - GET command example
 
@@ -21,24 +22,6 @@ cd swagger-editor/
 npm install
 npm start
 ```
-
-<hr/>
-
-Table of content:
-
-<!-- vscode-markdown-toc -->
-- [Swagger - GET command example](#swagger---get-command-example)
-  - [Specification file](#specification-file)
-  - [Path and request definition](#path-and-request-definition)
-  - [Links](#links)
-
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-<hr/>
 
 [Swagger](https://swagger.io/){:target="_blank"} is a framework and set of tools that use the [OpenAPI Specification (OAS)](https://www.openapis.org/){:target="_blank"} for describing, producing, consuming, and visualizing REST-ful web services.
 
