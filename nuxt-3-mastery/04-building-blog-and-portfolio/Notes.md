@@ -384,3 +384,16 @@ See:
 
 - [Nuxt Router options](https://nuxt.com/docs/guide/going-further/custom-routing#router-options)
 - [Vue Router Options](https://router.vuejs.org/api/interfaces/RouterOptions.html)
+
+### Table of content - highlight active section
+
+We are using the `IntersectionObserver` browser object on `onMounted` hook to see what is the active element. That way we know when ToC section intersects with the view-port.
+
+Then we set the `activeId` and add styling for active content link.
+
+Best works with long paragraphs.
+
+See:
+
+- [VueJS onMounted()](https://vuejs.org/api/composition-api-lifecycle.html#onmounted)
+- [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)

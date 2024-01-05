@@ -86,7 +86,7 @@ I added two _tags_ to group service commands - "products" and "purchase". I am a
 
 The online Swagger editor is composed of left side panel, where we enter the YAML code and right side panel, where we get error messages, hints and preview of the API. It also provides a simple generator of mock data inside the right side panel. In this case we have still work to do, as we do not have any paths defined:
 
-![Editor error](../blog-post-assets/images/swagger/editor_error-1.png)
+![Editor error](/images/swagger/editor_error-1.png)
 
 ## Path and request definition
 
@@ -140,7 +140,7 @@ paths:
           type: string
 ```
 
-The response has to be defined using **OAS schema**. The OAS schema object is based off the [JSON Schema Specification](http://json-schema.org/). With the OAS schema we define:
+The response has to be defined using **OAS schema**. The OAS schema object is based off the [JSON Schema Specification](https://json-schema.org/){:target="_blank"}. With the OAS schema we define:
 
 - Key and value pairs
 - Type of the values
@@ -234,6 +234,6 @@ definitions:
 
 [OpenAPI Specification (OAS)](https://www.openapis.org/){:target="_blank"}
 
-[YAML](http://yaml.org/){:target="_blank"}
+[YAML](https://yaml.org/){:target="_blank"}
 
 [YAML basic syntax](./yaml-basic-syntax/){:target="_blank"}
