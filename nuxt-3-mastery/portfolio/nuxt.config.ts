@@ -18,5 +18,10 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: ''
+  },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
   }
 })

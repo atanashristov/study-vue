@@ -363,3 +363,24 @@ See:
 
 - [NuxtContent - ContentDoc](https://content.nuxt.com/components/content-doc)
 - [NuxtContent - ContentDoc Slots](https://content.nuxt.com/components/content-query#slots)
+
+### Table of content - smooth scrolling
+
+We add to _nuxt.config.ts_:
+
+```js
+export default defineNuxtConfig({
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  }
+})
+```
+
+We add custom router options in _app/router.options_ file.
+
+See:
+
+- [Nuxt Router options](https://nuxt.com/docs/guide/going-further/custom-routing#router-options)
+- [Vue Router Options](https://router.vuejs.org/api/interfaces/RouterOptions.html)
