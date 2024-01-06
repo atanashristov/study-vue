@@ -397,3 +397,15 @@ See:
 
 - [VueJS onMounted()](https://vuejs.org/api/composition-api-lifecycle.html#onmounted)
 - [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+
+### Handling 404: Page not Found
+
+For content pages we change the _[...slug].vue_ page We are using _slots_ with default template and named template for _#not-found_.
+
+For other page routes we add _/error.vue_ page.
+
+See:
+
+- [Nuxt - Error handling](https://nuxt.com/docs/getting-started/error-handling)
+- [VueJS - Named Slots](https://vuejs.org/guide/components/slots.html#named-slots)
+- [NuxtContet - Slots](https://content.nuxt.com/components/content-doc#slots)
