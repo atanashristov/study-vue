@@ -402,10 +402,64 @@ See:
 
 For content pages we change the _[...slug].vue_ page We are using _slots_ with default template and named template for _#not-found_.
 
-For other page routes we add _/error.vue_ page.
+For other page routes we add _/error.vue_ page. It receives a single `error` object.
+The `error` object provides fields `url`, `statusCode`, `statusMessage`, `message`, `description` and `data`. We assign custom fields to the `data` field.
+
+```json
+{
+  "url": "/aboutx",
+  "statusCode": 404,
+  "statusMessage": "Page not found: /aboutx",
+  "message": "Page not found: /aboutx",
+  "stack": "",
+  "data": "{\"path\":\"/aboutx\"}"
+}
+```
 
 See:
 
 - [Nuxt - Error handling](https://nuxt.com/docs/getting-started/error-handling)
 - [VueJS - Named Slots](https://vuejs.org/guide/components/slots.html#named-slots)
 - [NuxtContet - Slots](https://content.nuxt.com/components/content-doc#slots)
+
+### Page transitions
+
+Nuxt leverages Vue's `<Transition>` component to apply transitions between pages and layouts.
+
+It applies animation when page or component is leaving or entering the DOM.
+
+It it is a component, the component must have one single root element. Note: in Vue3 we can have multiple root elements under `<template>` tag.
+
+They are 6 CSS classes that apply to `<Transition>`:
+
+- Enter - `v-enter-from`, `v-enter-active`, `v-enter-to`
+- Leave - `v-leave-from`, `v-leave-active`, `v-leave-to`
+
+Details:
+
+- `v-enter-from`: Applied before the element is placed inside the DOM. Sets the state of the element on the first frame of the animation.
+- `v-enter-to`: Applied once the element is placed inside the DOM. Sets the state of the element on the first frame of the animation.
+- `v-enter-active`: Sets the duration or easing of the animation.
+
+These are the default names, but it can be customized.
+
+We add CSS styles in _app.vue_, these become available for the entire app.
+
+Then we configure in _nuxt.config.ts_ a `pageTransition`:
+
+```js
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
+```
+
+the `name` here has to _match the css class prefixes_. That way we can have many transitions defined in our app.
+
+the `mode` specifies which element is animated first and which second. by default they animate at the same time. We specify "out-in", the leaving elements will animate first.
+
+See:
+
+- [Nuxt Transitions](https://nuxt.com/docs/getting-started/transitions)
+- [Vue Transitions](https://vuejs.org/guide/built-ins/transition.html#the-transition-component)
