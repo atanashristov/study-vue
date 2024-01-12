@@ -11,6 +11,8 @@ toc: true
 
 # Kubernetes - Setup a Cluster using Kubeadm
 
+## Intro
+
 ![Kubernetes - Setup a Cluster using Kubeadm](/images/logos/kubernetes-logo.png)
 
 This blog post contains an example how to set up Kubernetes cluster with Virtual Box virtual machines.

@@ -10,6 +10,8 @@ toc: true
 ---
 # Swagger - GET command example
 
+## Intro
+
 ![Swagger - GET command example](/images/logos/swagger-logo.png)
 
 In this post I put together an example of defining a GET API command in _Swagger_. I cover defining URL and path of the API, list of parameters (path, query and header parameters) for the GET API command and the response body of the command.

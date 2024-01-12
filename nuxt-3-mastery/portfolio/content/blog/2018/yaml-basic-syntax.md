@@ -10,6 +10,8 @@ toc: true
 ---
 # Yaml - Basic Syntax
 
+## Intro
+
 ![Yaml - Basic Syntax](/images/logos/yaml-logo.png)
 
 These are notes on _basic YAML syntax_ which I took while studying Swagger.

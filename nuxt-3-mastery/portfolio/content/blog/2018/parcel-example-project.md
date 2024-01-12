@@ -10,6 +10,8 @@ toc: true
 ---
 # Parcel - A zero configuration web application bundler
 
+## Intro
+
 ![Parcel - A zero configuration web application bundler](/images/logos/javascript-logo.png)
 
 _Webpack_ configuration is complicated? Take a look at _Parcel_, a "blazing fast, zero configuration web application bundler".

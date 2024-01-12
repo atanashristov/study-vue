@@ -475,3 +475,5 @@ See:
 - [Scoped slots](https://vuejs.org/guide/components/slots.html#scoped-slots)
 - [MDC Props](https://content.nuxt.com/usage/markdown#props)
 - [Document driven mode](https://content.nuxt.com/document-driven/introduction)
+
+### Problem with page transitions
