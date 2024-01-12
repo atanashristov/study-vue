@@ -463,3 +463,15 @@ See:
 
 - [Nuxt Transitions](https://nuxt.com/docs/getting-started/transitions)
 - [Vue Transitions](https://vuejs.org/guide/built-ins/transition.html#the-transition-component)
+
+### Main Page, Props, MDC, Reusing BlogPosts Component
+
+Document driven mode - we create one single catch-all page.
+
+Also we can specify layouts directly from the markdown files.
+
+See:
+
+- [Scoped slots](https://vuejs.org/guide/components/slots.html#scoped-slots)
+- [MDC Props](https://content.nuxt.com/usage/markdown#props)
+- [Document driven mode](https://content.nuxt.com/document-driven/introduction)
