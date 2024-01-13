@@ -476,4 +476,12 @@ See:
 - [MDC Props](https://content.nuxt.com/usage/markdown#props)
 - [Document driven mode](https://content.nuxt.com/document-driven/introduction)
 
-### Problem with page transitions
+### Responsive Design
+
+Tailwind is mobile-first. We start with it and extend using breakpoints to bigger devices.
+
+It has predefined breakpoints.
+
+See:
+
+- [Tailwind CSS Responsive Design](https://tailwindcss.com/docs/responsive-design)
