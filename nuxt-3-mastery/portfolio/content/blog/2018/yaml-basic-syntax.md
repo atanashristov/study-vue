@@ -16,7 +16,7 @@ toc: true
 
 These are notes on _basic YAML syntax_ which I took while studying Swagger.
 
-YAML is used by many systems and programing languages. It is easy to write and understand and has simple format based on indentation.
+YAML is used by many systems and programming languages. It is easy to write and understand and has simple format based on indentation.
 
 YAML stands for **Y**AML **A**in't **M**arkup **L**anguage, even though originally was created to be used for markup.
 

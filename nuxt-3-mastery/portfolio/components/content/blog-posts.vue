@@ -63,7 +63,6 @@ const posts = computed(() => {
     lastYear = year
   }
 
-  console.log(result)
   return result;
 })
 </script>

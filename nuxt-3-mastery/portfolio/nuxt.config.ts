@@ -26,5 +26,10 @@ export default defineNuxtConfig({
     options: {
       scrollBehaviorType: 'smooth'
     }
+  },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
   }
 })

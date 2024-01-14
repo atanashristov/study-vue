@@ -485,3 +485,77 @@ It has predefined breakpoints.
 See:
 
 - [Tailwind CSS Responsive Design](https://tailwindcss.com/docs/responsive-design)
+
+### Generating Sitemaps (Server Maps, Nitro)
+
+Google expects at root of the site _sitemaps.xml_ file. We can generate it server side.
+
+We can also create server routes, but pre-render before deployment to save on costs (so we don't need _nodejs_ running on server).
+
+We create _server/routes_ diectory and create the server routes inside it.
+
+We generate the sitemaps file with `nuxt generate` command.
+
+Next chapter we actually pre-render the entire site, so it can be hosted statically.
+
+First we need to install _sitemap_ node package: `npm install --save-dev sitemap`
+
+Then we add _server\routes\sitemap.xml.js_:
+
+```js
+import { serverQueryContent } from '#content/server'
+import { SitemapStream, streamToPromise } from 'sitemap'
+
+export default defineEventHandler(async (event) => {
+  // Fetch all documents
+  const docs = await serverQueryContent(event).find()
+  const sitemap = new SitemapStream({
+    hostname: 'http://localhost:3000' // THIS WE FIX LATER
+  })
+
+  for (const doc of docs) {
+    sitemap.write({
+      url: doc._path,
+      changefreq: 'monthly'
+    })
+  }
+  sitemap.end()
+
+  return streamToPromise(sitemap)
+})
+```
+
+Re-run `npm run dev` and we can now browse to [http://localhost:3000/sitemap.xml](http://localhost:3000/sitemap.xml).
+
+We want to pre-generate this XML file before deployment as a static site. We add `nitro.prerender` inside the _nuxt.config_ file. Now when we pre-render the site it will also generate the XML sitemaps file:
+
+```js
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  }
+```
+
+To generate the static site we can stop the server and run:
+
+```sh
+npm run generate
+```
+
+The site is generated in _/dist_ folder. You can serve with any web server, for example:
+
+```sh
+npx serve .output/public
+```
+
+```sh
+py -m http.server 8888`
+```
+
+See:
+
+- [Nuxt - Server Routes](https://nuxt.com/docs/guide/directory-structure/server#server-directory)
+- [NuxtContent - Sitemaps](https://content.nuxt.com/recipes/sitemap)
+- [Nuxt - Nitro Server Engine](https://nuxt.com/docs/guide/concepts/server-engine)
+- [Nitro - Server Routing](https://nitro.unjs.io/guide/routing)

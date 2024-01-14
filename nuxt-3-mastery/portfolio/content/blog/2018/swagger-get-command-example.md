@@ -27,7 +27,7 @@ npm start
 
 [Swagger](https://swagger.io/){:target="_blank"} is a framework and set of tools that use the [OpenAPI Specification (OAS)](https://www.openapis.org/){:target="_blank"} for describing, producing, consuming, and visualizing REST-ful web services.
 
-Swagger uses _YAML_ as language to define the API contracts. Some basic YAML syntax I covered in a previous [blog post](./yaml-basic-syntax/).
+Swagger uses _YAML_ as language to define the API contracts. Some basic YAML syntax I covered in another [YAML blog post](/blog/2018/yaml-basic-syntax){:target="_blank"}.
 
 In this example the GET API command is a part of a _Product Catalog API_ with the following top-level information:
 
@@ -238,4 +238,4 @@ definitions:
 
 [YAML](https://yaml.org/){:target="_blank"}
 
-[YAML basic syntax](./yaml-basic-syntax/){:target="_blank"}
+[YAML basic syntax](/blog/2018/yaml-basic-syntax){:target="_blank"}
