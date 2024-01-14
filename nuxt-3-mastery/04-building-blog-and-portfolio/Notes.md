@@ -559,3 +559,23 @@ See:
 - [NuxtContent - Sitemaps](https://content.nuxt.com/recipes/sitemap)
 - [Nuxt - Nitro Server Engine](https://nuxt.com/docs/guide/concepts/server-engine)
 - [Nitro - Server Routing](https://nitro.unjs.io/guide/routing)
+
+### Generating Static Site
+
+We run:
+
+```sh
+npm run generate
+```
+
+It goes over every single route and generates all the files.
+
+This also includes the sitemap.
+
+You can preview this build using `npx serve .output/public`
+
+You can now deploy `.output/public` to any static hosting!
+
+See:
+
+- [Nuxt Static Hosting](https://nuxt.com/docs/getting-started/deployment#static-hosting)
