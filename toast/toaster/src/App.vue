@@ -36,7 +36,29 @@ const notificationTypes: NotificationType[] = [
           </button>
         </div>
       </div>
+      <div class="input-group">
+        <label class="input-label" for="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          class="custom-input"
+          placeholder="Enter title..."
+          v-model="currentConfig.title"
+        />
+      </div>
+      <div class="input-group">
+        <label class="input-label" for="message">Message</label>
+        <textarea
+          id="message"
+          type="text"
+          class="custom-textarea"
+          placeholder="Enter message..."
+          rows="3"
+          v-model="currentConfig.message"
+        />
+      </div>
     </div>
+    {{ currentConfig }}
     <div class="management-area"></div>
   </div>
 </template>
