@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <p>Hey, {{ firstName }} {{ lastName.toUpperCase() }}!</p>
+      <p>How is your day so far, {{ fullName() }}?</p>
+      <div>{{ 2 + 2 }}</div>
+    </div>
+
+    <!-- <div id="app2">
+      <p>Hey, {{ firstName }} {{ lastName }}!</p>
+      <div>{{ 2 + 2 }}</div>
+    </div> -->
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

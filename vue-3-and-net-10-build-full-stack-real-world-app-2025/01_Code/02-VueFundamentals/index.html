@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Fundamentals</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ getMessage() }}</h1>
+      <p>Your lucky number is: {{ getRandomLuckyNumber(1, 1000) }}</p>
+      <p>
+        {{ luckyNumber }} is an {{ luckyNumber % 2 === 0 ? 'even' : 'odd' }}
+        number.
+      </p>
+      {{ updateLuckyNumber() }}
+      <p>Your lucky numbers are: {{ luckyNumbers.join(', ') }}</p>
+      <p>Random number from 1-10: {{ Math.floor(Math.random() * 10) + 1 }}</p>
+      <h2>Employees</h2>
+      <ul>
+        <li v-for="employee in employees" :key="employee.name">
+          {{ employee.name }} - Age: {{ employee.age }}
+        </li>
+      </ul>
+      <p>
+        Random employee: {{ randomEmployeeRef.value.name }} - Age: {{
+        randomEmployeeRef.value.age }}
+      </p>
+    </div>
+  </body>
+  <script>
+    const { createApp, computed, ref } = Vue;
+
+    createApp({
+      setup() {
+        const message = 'Hello Vue 3!';
+        const luckyNumber = ref(Math.floor(Math.random() * 100) + 1);
+        const luckyNumbers = [7, 13, 21, 42, 99];
+        const employees = [
+          { name: 'Alice', age: 30 },
+          { name: 'Bob', age: 25 },
+          { name: 'Charlie', age: 35 },
+        ];
+        const randomEmployeeRef = ref(getRandomEmployee());
+
+        function getMessage() {
+          return message.toUpperCase();
+        }
+
+        function getRandomLuckyNumber(min, max) {
+          luckyNumber.value = Math.floor(Math.random() * (max - min + 1)) + min;
+          return luckyNumber.value;
+        }
+
+        function updateLuckyNumber() {
+          setTimeout(() => {
+            luckyNumber.value = Math.floor(Math.random() * 100) + 1;
+          }, 2000);
+        }
+
+        function getRandomEmployee() {
+          const randomIndex = Math.floor(Math.random() * employees.length);
+          return employees[randomIndex];
+        }
+
+        // Using computed to get a random employee.
+        // This will recompute every time the component re-renders.
+        // The random employee will re-compute if the data changes,
+        // but since employees is static in this example, it will only change when the component re-renders.
+        const randomEmployeeComputed = computed(() => getRandomEmployee());
+
+        return {
+          luckyNumber,
+          luckyNumbers,
+          employees,
+          getMessage,
+          getRandomLuckyNumber,
+          updateLuckyNumber,
+          getRandomEmployee,
+          randomEmployeeRef,
+          randomEmployeeComputed,
+        };
+      },
+    }).mount('#app');
+  </script>
+</html>
