@@ -49,14 +49,22 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1.5px solid var(--border-color);
+  border: 2px solid var(--btn-color);
   border-radius: 16px;
   gap: 6px;
   transition: all 0.3s ease;
+  background: white;
+  color: var(--btn-color);
 }
 
 .type-card:hover {
   background-color: var(--btn-color);
   color: white;
   transform: translateY(-3px);
+}
+
+.type-card.active {
+  background-color: var(--btn-color) !important;
+  color: white;
+  border-color: transparent;
 }

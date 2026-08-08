@@ -2,6 +2,12 @@
 import type { NotificationType } from './types';
 import { getBgColor } from './utils/colors';
 import { getIcon } from './utils/icons';
+import { useToastStore } from './stores/toastStore';
+import { storeToRefs } from 'pinia';
+
+const store = useToastStore();
+const { currentConfig } = storeToRefs(store);
+const { updateType } = store;
 
 const notificationTypes: NotificationType[] = [
   'success',
@@ -21,10 +27,10 @@ const notificationTypes: NotificationType[] = [
           <button
             v-for="t in notificationTypes"
             :key="t"
-            :class="['type-card']"
+            :class="['type-card', { active: currentConfig.type === t }]"
             :style="{ '--btn-color': getBgColor(t) }"
+            @click="updateType(t as NotificationType)"
           >
-            <!-- {active:currentConfig.type === t} -->
             <span class="type-icon" v-html="getIcon(t)"></span>
             <span>{{ t.charAt(0).toUpperCase() + t.slice(1) }}</span>
           </button>
