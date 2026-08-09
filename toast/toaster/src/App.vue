@@ -5,6 +5,7 @@ import { getIcon } from './utils/icons';
 import { useToastStore } from './stores/toastStore';
 import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
+import { getPositionLabel } from './utils/stringUtils';
 
 const store = useToastStore();
 const { currentConfig } = storeToRefs(store);
@@ -18,6 +19,15 @@ const notificationTypes: NotificationType[] = [
   'warning',
   'info',
 ];
+
+const positions = [
+  'top-left',
+  'top-center',
+  'top-right',
+  'bottom-left',
+  'bottom-center',
+  'bottom-right',
+] as const;
 </script>
 
 <template>
@@ -85,6 +95,18 @@ const notificationTypes: NotificationType[] = [
           />
           <span class="checkbox-label">Persistent (no auto-dismiss)</span>
         </label>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Position</label>
+        <div class="position-grid">
+          <button
+            v-for="position in positions"
+            :key="position"
+            type="button"
+            @click="currentConfig.position = position"
+            :class="['pos-card', { active: currentConfig.position === position }]"
+          >{{ getPositionLabel(position) }}</button>
+        </div>
       </div>
     </div>
     {{ currentConfig }}
