@@ -104,8 +104,48 @@ const positions = [
             :key="position"
             type="button"
             @click="currentConfig.position = position"
-            :class="['pos-card', { active: currentConfig.position === position }]"
-          >{{ getPositionLabel(position) }}</button>
+            :class="[
+              'pos-card',
+              { active: currentConfig.position === position },
+            ]"
+          >
+            {{ getPositionLabel(position) }}
+          </button>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="section-title">Style</div>
+        <div class="style-grid">
+          <div class="color-field">
+            <label>Background</label>
+            <div class="color-input-wrapper">
+              <input
+                type="color"
+                v-model="currentConfig.backgroundColor"
+                class="color-picker"
+              />
+              <input
+                type="text"
+                v-model="currentConfig.backgroundColor"
+                class="color-text"
+              />
+            </div>
+          </div>
+          <div class="color-field">
+            <label>Text</label>
+            <div class="color-input-wrapper">
+              <input
+                type="color"
+                v-model="currentConfig.textColor"
+                class="color-picker"
+              />
+              <input
+                type="text"
+                v-model="currentConfig.textColor"
+                class="color-text"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
