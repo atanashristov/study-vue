@@ -4,10 +4,13 @@ import { getBgColor } from './utils/colors';
 import { getIcon } from './utils/icons';
 import { useToastStore } from './stores/toastStore';
 import { storeToRefs } from 'pinia';
+import { ref } from 'vue';
 
 const store = useToastStore();
 const { currentConfig } = storeToRefs(store);
-const { updateType } = store;
+const { updateType, setPersistence } = store;
+
+const isPersistent = ref(false);
 
 const notificationTypes: NotificationType[] = [
   'success',
@@ -56,6 +59,32 @@ const notificationTypes: NotificationType[] = [
           rows="3"
           v-model="currentConfig.message"
         />
+      </div>
+      <div class="input-group">
+        <div class="duration-header">
+          <label class="input-label" for="duration">Duration</label>
+          <span class="duration-value"
+            >{{ currentConfig.duration / 1000 }}s</span
+          >
+        </div>
+        <input
+          type="range"
+          min="1000"
+          max="10000"
+          step="500"
+          class="custom-slider"
+          v-model="currentConfig.duration"
+          :disabled="isPersistent"
+          :style="{ '--slider-color': getBgColor(currentConfig.type) }"
+        />
+        <label class="checkbox-container">
+          <input
+            type="checkbox"
+            v-model="isPersistent"
+            @change="setPersistence(isPersistent)"
+          />
+          <span class="checkbox-label">Persistent (no auto-dismiss)</span>
+        </label>
       </div>
     </div>
     {{ currentConfig }}

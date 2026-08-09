@@ -24,6 +24,9 @@ export const useToastStore = defineStore('toast', {
         type: newType,
         backgroundColor: NOTIFICATION_COLORS[newType], // Update background color based on the new type
       };
-    }
+    },
+    setPersistence(isPersistent: boolean) {
+      this.currentConfig.duration = isPersistent ? 0 : 3000; // Set duration to 0 for persistent notifications
+    },
   }
 })
