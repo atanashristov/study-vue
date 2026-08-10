@@ -315,3 +315,42 @@
   color: white;
   box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
 }
+
+/* CSS styling for a primary trigger button with full width, padding, shadow effects, and hover state with transform animation. */
+
+.main-trigger-button {
+  width: 100%;
+  padding: 18px;
+  margin-top: 30px;
+  background: #6366f1;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-trigger-button:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 20px -5px rgba(99, 102, 241, 0.4);
+}
+
+/* CSS styling for a preview boundary container with dashed border and a preview card heading margin. */
+
+.preview-boundary {
+  width: 100%;
+  height: 400px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e1;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-card h3 {
+  margin-bottom: 10px;
+}

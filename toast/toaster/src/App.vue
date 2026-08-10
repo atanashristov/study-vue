@@ -6,6 +6,7 @@ import { useToastStore } from './stores/toastStore';
 import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
 import { getPositionLabel } from './utils/stringUtils';
+import LivePreview from './components/LivePreview.vue';
 
 const store = useToastStore();
 const { currentConfig } = storeToRefs(store);
@@ -177,7 +178,14 @@ const animations: AnimationType[] = ['fade', 'slide', 'bounce'];
         </div>
       </div>
     </div>
+    <div class="management-area">
+      <div class="panel">
+        <LivePreview />
+        <button class="main-trigger-button">
+          Show Notification
+        </button>
+      </div>
+    </div>
     {{ currentConfig }}
-    <div class="management-area"></div>
   </div>
 </template>
