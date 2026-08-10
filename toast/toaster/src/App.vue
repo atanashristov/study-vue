@@ -148,6 +148,19 @@ const positions = [
           </div>
         </div>
       </div>
+      <div class="input-group">
+        <div class="section-title">Options</div>
+        <div class="options-flex">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" v-model="currentConfig.showIcon" />
+            <span>Show Icon</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" v-model="currentConfig.showCloseButton" />
+            <span>Show Close Button</span>
+          </label>
+        </div>
+      </div>
     </div>
     {{ currentConfig }}
     <div class="management-area"></div>

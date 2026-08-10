@@ -256,3 +256,33 @@
   border: none;
   border-radius: 6px;
 }
+
+/* CSS styling for a flexible options container, checkbox wrapper with flexbox, and custom checkbox accent color. */
+
+.options-flex {
+  display: flex;
+  gap: 20px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.checkbox-wrapper input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: #6366f1;
+}
+
+/* CSS styling for section titles with font weight, color, and margin spacing. */
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 20px 0 12px 0;
+}
