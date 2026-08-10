@@ -286,3 +286,32 @@
   color: #2d3748;
   margin: 20px 0 12px 0;
 }
+
+/* CSS styling for an animation selection grid with 3-column layout and active button state styling. */
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  gap: 8px;
+}
+
+.anim-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #718096;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.anim-btn.active {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+}

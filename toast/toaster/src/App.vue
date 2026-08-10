@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NotificationType } from './types';
+import type { AnimationType, NotificationType } from './types';
 import { getBgColor } from './utils/colors';
 import { getIcon } from './utils/icons';
 import { useToastStore } from './stores/toastStore';
@@ -28,6 +28,8 @@ const positions = [
   'bottom-center',
   'bottom-right',
 ] as const;
+
+const animations: AnimationType[] = ['fade', 'slide', 'bounce'];
 </script>
 
 <template>
@@ -159,6 +161,19 @@ const positions = [
             <input type="checkbox" v-model="currentConfig.showCloseButton" />
             <span>Show Close Button</span>
           </label>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="section-title">Animation</div>
+        <div class="animation-grid">
+          <button
+            v-for="anim in animations"
+            :key="anim"
+            :class="['anim-btn', { active: currentConfig.animation === anim }]"
+            @click="currentConfig.animation = anim"
+          >
+            {{ anim.charAt(0).toUpperCase() + anim.slice(1) }}
+          </button>
         </div>
       </div>
     </div>
