@@ -180,7 +180,7 @@ const animations: AnimationType[] = ['fade', 'slide', 'bounce'];
     </div>
     <div class="management-area">
       <div class="panel">
-        <LivePreview />
+        <LivePreview :currentConfig="currentConfig" />
         <button class="main-trigger-button">
           Show Notification
         </button>
