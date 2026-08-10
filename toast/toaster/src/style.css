@@ -401,3 +401,55 @@
   right: 0;
   align-items: flex-end;
 }
+
+/* CSS styling for individual toast items with fixed width constraints, flex-box layout, and shadow effects. */
+
+.toast-item {
+  min-width: 280px;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toast-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.toast-message {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.toast-close {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 20px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.toast-close:hover {
+  opacity: 1;
+}

@@ -16,6 +16,7 @@ export const useToastStore = defineStore('toast', {
       showCloseButton: true,
       animation: 'slide',
     } as Omit<NotificationConfig, 'id'>, // excludes the 'id' property from NotificationConfig
+    activeToasts: [] as NotificationConfig[], // Array to hold active notifications
   }),
   actions: {
     updateType(newType: NotificationType) {
@@ -28,5 +29,20 @@ export const useToastStore = defineStore('toast', {
     setPersistence(isPersistent: boolean) {
       this.currentConfig.duration = isPersistent ? 0 : 3000; // Set duration to 0 for persistent notifications
     },
-  }
-})
+    showNotification() {
+      const newToast: NotificationConfig = {
+        ...this.currentConfig,
+        id: Date.now().toString(), // Generate a unique ID based on the current timestamp
+      };
+      this.activeToasts.push(newToast); // Add the new notification to the activeToasts array
+      if (this.currentConfig.duration > 0) {
+        setTimeout(() => {
+          this.removeToast(newToast.id); // Automatically remove the notification after the specified duration
+        }, this.currentConfig.duration);
+      }
+    },
+    removeToast(toastId: string) {
+      this.activeToasts = this.activeToasts.filter(toast => toast.id !== toastId); // Remove the notification with the specified ID
+    },
+  },
+});

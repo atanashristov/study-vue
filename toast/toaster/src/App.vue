@@ -9,8 +9,8 @@ import { getPositionLabel } from './utils/stringUtils';
 import LivePreview from './components/LivePreview.vue';
 
 const store = useToastStore();
-const { currentConfig } = storeToRefs(store);
-const { updateType, setPersistence } = store;
+const { currentConfig, activeToasts } = storeToRefs(store);
+const { updateType, setPersistence, showNotification, removeToast } = store;
 
 const isPersistent = ref(false);
 
@@ -180,8 +180,12 @@ const animations: AnimationType[] = ['fade', 'slide', 'bounce'];
     </div>
     <div class="management-area">
       <div class="panel">
-        <LivePreview :currentConfig="currentConfig" />
-        <button class="main-trigger-button">
+        <LivePreview
+          :active-toasts="activeToasts"
+          :currentConfig="currentConfig"
+          @close="removeToast"
+        />
+        <button class="main-trigger-button" @click="showNotification">
           Show Notification
         </button>
       </div>
