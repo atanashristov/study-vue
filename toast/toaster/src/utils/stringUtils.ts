@@ -18,3 +18,16 @@ export const getPositionLabel = (pos: string): string => {
   //     return '';
   // }
 };
+
+export const formatConfigToCode = (config: any): string => {
+  return `const notify = ${JSON.stringify(
+    config,
+    (key, value) => {
+      if (key.startsWith('$') || key.startsWith('_')) {
+        return undefined;
+      }
+      return value;
+    },
+    2
+  )};`;
+};

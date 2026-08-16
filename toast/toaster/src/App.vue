@@ -4,9 +4,10 @@ import { getBgColor } from './utils/colors';
 import { getIcon } from './utils/icons';
 import { useToastStore } from './stores/toastStore';
 import { storeToRefs } from 'pinia';
-import { ref } from 'vue';
-import { getPositionLabel } from './utils/stringUtils';
+import { computed, ref } from 'vue';
+import { getPositionLabel, formatConfigToCode } from './utils/stringUtils';
 import LivePreview from './components/LivePreview.vue';
+import CodeExporter from './components/CodeExporter.vue';
 
 const store = useToastStore();
 const { currentConfig, activeToasts, presets } = storeToRefs(store);
@@ -22,6 +23,8 @@ const {
 
 const isPersistent = ref(false);
 const presetNameInput = ref('');
+
+const generatedCode = computed(() => formatConfigToCode(currentConfig.value));
 
 const notificationTypes: NotificationType[] = [
   'success',
@@ -255,8 +258,9 @@ const handleSavePreset = () => {
             <button class="btn-save" @click="handleSavePreset">Save</button>
           </div>
         </div>
+
+        <CodeExporter :code="generatedCode" />
       </div>
     </div>
-    {{ currentConfig }}
   </div>
 </template>

@@ -578,3 +578,36 @@
   color: #94a3b8;
   padding: 20px;
 }
+
+code {
+  display: block;
+  background: #2d2d2d;
+  color: #ccc;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+
+.copy-btn-v2 {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-btn-v2:hover {
+  background-color: #e2e8f0;
+}
+
+.icon-clipboard {
+  width: 14px;
+  height: auto;
+  opacity: 0.8;
+  color: #334155;
+}
