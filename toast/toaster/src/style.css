@@ -453,3 +453,128 @@
 .toast-close:hover {
   opacity: 1;
 }
+
+/* CSS styling for a preset card with column layout and a preset input group with horizontal flex layout. */
+
+.preset-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.preset-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.preset-field {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.preset-field:focus {
+  border-color: #6366f1;
+}
+
+.btn-save {
+  padding: 0 20px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-save:hover {
+  background: #4f46e5;
+}
+
+```css .preset-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.preset-item:hover {
+  background: #f1f5f9;
+  transform: translateX(4px);
+}
+
+/* CSS styling for preset items with flexbox layout, border, background color, and hover state with slide animation. */
+
+.presets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preset-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f0f3f6;
+  transition: all 0.2s;
+}
+
+.preset-item:hover {
+  background: #f1f5f9;
+  transform: translateX(4px);
+}
+
+.preset-info {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.preset-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.preset-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.btn-delete:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.empty-list {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+  padding: 20px;
+}

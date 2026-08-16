@@ -17,3 +17,10 @@ export interface NotificationConfig {
   showCloseButton: boolean;
   animation: AnimationType;
 }
+
+export interface Preset {
+  id: string;
+  name: string;
+  config: Omit<NotificationConfig, 'id'>;
+  createdAt: Date; // Excludes the 'id' property from NotificationConfig
+}

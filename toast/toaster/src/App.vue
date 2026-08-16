@@ -9,10 +9,19 @@ import { getPositionLabel } from './utils/stringUtils';
 import LivePreview from './components/LivePreview.vue';
 
 const store = useToastStore();
-const { currentConfig, activeToasts } = storeToRefs(store);
-const { updateType, setPersistence, showNotification, removeToast } = store;
+const { currentConfig, activeToasts, presets } = storeToRefs(store);
+const {
+  updateType,
+  setPersistence,
+  showNotification,
+  removeToast,
+  savePreset,
+  deletePreset,
+  applyPreset,
+} = store;
 
 const isPersistent = ref(false);
+const presetNameInput = ref('');
 
 const notificationTypes: NotificationType[] = [
   'success',
@@ -31,6 +40,15 @@ const positions = [
 ] as const;
 
 const animations: AnimationType[] = ['fade', 'slide', 'bounce'];
+
+const handleSavePreset = () => {
+  const presetName = presetNameInput.value.trim();
+  if (!presetName) {
+    return;
+  }
+  savePreset(presetName);
+  presetNameInput.value = '';
+};
 </script>
 
 <template>
@@ -188,6 +206,55 @@ const animations: AnimationType[] = ['fade', 'slide', 'bounce'];
         <button class="main-trigger-button" @click="showNotification">
           Show Notification
         </button>
+        <div class="card preset-card">
+          <h3>Saved Presets</h3>
+          <div class="presets-list">
+            <div
+              v-for="p in presets"
+              :key="p.id"
+              class="preset-item"
+              @click="applyPreset(p.config)"
+            >
+              <div
+                class="preset-info"
+                @click="Object.assign(currentConfig, p.config)"
+              >
+                <span
+                  class="preset-dot"
+                  :style="{ background: p.config.backgroundColor }"
+                ></span>
+                <span class="preset-name">{{ p.name }}</span>
+              </div>
+              <button class="btn-delete" @click="deletePreset(p.id)">
+                <svg
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2h4a1 1 0 1 1 0 2h-1.069l-.867 12.142A2 2 0 0 1 17.069 22H6.93a2 2 0 0 1-1.995-1.858L4.07 8H3a1 1 0 0 1 0-2h4V4zm2 2h6V4H9v2zM6.074 8l.857 12H17.07l.857-12H6.074zM10 10a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div v-if="presets.length === 0" class="empty-list">
+              No Presets yet
+            </div>
+          </div>
+          <div class="preset-input-group">
+            <input
+              type="text"
+              placeholder="Preset name..."
+              class="preset-field"
+              v-model="presetNameInput"
+              @keyuop.enter="handleSavePreset"
+            />
+            <button class="btn-save" @click="handleSavePreset">Save</button>
+          </div>
+        </div>
       </div>
     </div>
     {{ currentConfig }}
