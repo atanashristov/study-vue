@@ -4,11 +4,13 @@ import { getBgColor } from './utils/colors';
 import { getIcon } from './utils/icons';
 import { useToastStore } from './stores/toastStore';
 import { storeToRefs } from 'pinia';
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { getPositionLabel, formatConfigToCode } from './utils/stringUtils';
 import LivePreview from './components/LivePreview.vue';
 import CodeExporter from './components/CodeExporter.vue';
+import { useTheme } from './composables/useTheme';
 
+const { isDarkMode, toggleTheme, initTheme } = useTheme();
 const store = useToastStore();
 const { currentConfig, activeToasts, presets } = storeToRefs(store);
 const {
@@ -52,6 +54,10 @@ const handleSavePreset = () => {
   savePreset(presetName);
   presetNameInput.value = '';
 };
+
+onMounted(() => {
+  initTheme();
+});
 </script>
 
 <template>
@@ -262,5 +268,10 @@ const handleSavePreset = () => {
         <CodeExporter :code="generatedCode" />
       </div>
     </div>
+
+    <button @click="toggleTheme" class="theme-toggle-btn">
+      <span v-if="isDarkMode">🌞 Light Mode</span>
+      <span v-else>🌙 Dark Mode</span>
+    </button>
   </div>
 </template>
